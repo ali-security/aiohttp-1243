@@ -283,6 +283,8 @@ jobs:
         submodules: true
     - name: Setup Python
       uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
     - name: Update pip, wheel, setuptools, build, twine
       run: |
         python -m pip install -U pip wheel setuptools build twine
@@ -345,7 +347,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.x
+        python-version: '3.11'
     - name: Update pip, wheel, setuptools, build, twine
       run: |
         python -m pip install -U pip wheel setuptools build twine
