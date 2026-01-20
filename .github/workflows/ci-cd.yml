@@ -188,11 +188,7 @@ jobs:
     - name: Get pip cache dir
       id: pip-cache
       run: |
-        if [ "${{ matrix.os }}" == "ubuntu-22.04" ] && [ "${{ matrix.pyver }}" == "3.6" ]; then
-          echo "::set-output name=dir::$(python -m pip cache dir)"
-        else
-          echo "::set-output name=dir::$(pip cache dir)"
-        fi
+        echo "::set-output name=dir::$(python -m pip cache dir)"
     - name: Cache PyPI
       uses: actions/cache@v4
       with:
